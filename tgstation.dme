@@ -8830,6 +8830,8 @@
 #include "modular_nova\modules_bluemoon\generators\code\machinery\turbine.dm"
 #include "modular_nova\modules_bluemoon\generators\code\objects\items\machine_boards.dm"
 #include "modular_nova\modules_bluemoon\headpat_lover_quirk\headpat_lover.dm"
+#include "modular_nova\modules_bluemoon\jukebox\datums\components\jukebox.dm"
+#include "modular_nova\modules_bluemoon\jukebox\machinery\dance_machine.dm"
 #include "modular_nova\modules_bluemoon\korps\code\poster.dm"
 #include "modular_nova\modules_bluemoon\loadout_items\code\personal.dm"
 #include "modular_nova\modules_bluemoon\lustwish\lustwish.dm"
