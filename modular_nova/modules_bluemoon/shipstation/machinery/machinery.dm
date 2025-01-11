@@ -2,6 +2,10 @@
 	input_level = 120 KILO WATTS
 	output_level = 90 KILO WATTS
 
+/obj/machinery/power/smes/super/full/marinastation
+	input_level = 200 KILO WATTS
+	output_level = 200 KILO WATTS
+
 /obj/machinery/computer/shuttle/shipstation
 	name = "NTSS 'Blue Moon' Shuttle Console"
 	desc = "Used to control the NTSS 'Blue Moon'."
