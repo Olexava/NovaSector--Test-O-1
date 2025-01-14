@@ -8853,6 +8853,7 @@
 #include "modular_nova\modules_bluemoon\mutations\kinetic_absorption.dm"
 #include "modular_nova\modules_bluemoon\nudist_quirk\nudist.dm"
 #include "modular_nova\modules_bluemoon\oversensitive_quirk\oversensitive.dm"
+#include "modular_nova\modules_bluemoon\power\solar.dm"
 #include "modular_nova\modules_bluemoon\reagents\dopamine.dm"
 #include "modular_nova\modules_bluemoon\reagents\rutt.dm"
 #include "modular_nova\modules_bluemoon\shipstation\mapping_helpers.dm"
