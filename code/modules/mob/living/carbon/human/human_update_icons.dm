@@ -1239,6 +1239,16 @@ mutant_styles: The mutant style - taur bodytype, STYLE_TESHARI, etc. // NOVA EDI
 				),
 			))
 
+	// Bluemoon edit - Quadrupedal crew
+	if(quadruped)
+		appearance.add_filters(list(
+			list(
+				"name" = "Cut_Torso",
+				"priority" = 1,
+				"params" = displacement_map_filter(cut_torso_mask, x = 0, y = 0, size = 5),
+			)
+		))
+
 	// Kinda gross but because many humans overlays do not use KEEP_TOGETHER we need to manually propogate the filter
 	// Otherwise overlays, such as worn overlays on icons, won't have the filter "applied", and the effect kinda breaks
 	if(!(appearance.appearance_flags & KEEP_TOGETHER))
