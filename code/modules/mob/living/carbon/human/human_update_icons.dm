@@ -1076,8 +1076,11 @@ mutant_styles: The mutant style - taur bodytype, STYLE_TESHARI, etc. // NOVA EDI
 // Some overlays can't be displaced as they're too close to the edge of the sprite or cross the middle point in a weird way.
 // So instead we have to pass them through an offset, which is close enough to look good.
 /mob/living/carbon/human/apply_overlay(cache_index)
+	// Bluemoon edit - Quadrupedal crew
+	/*
 	if(get_mob_height() == HUMAN_HEIGHT_MEDIUM)
 		return ..()
+	*/
 
 	var/raw_applied = overlays_standing[cache_index]
 	var/string_form_index = num2text(cache_index)
@@ -1137,6 +1140,8 @@ mutant_styles: The mutant style - taur bodytype, STYLE_TESHARI, etc. // NOVA EDI
 		"Monkey_Legs",
 		"Monkey_Gnome_Cut_Torso",
 		"Monkey_Gnome_Cut_Legs",
+		// Bluemoon edit - Quadrupedal crew
+		"Taur_Cut_Torso",
 	))
 
 	switch(get_mob_height())
@@ -1243,9 +1248,9 @@ mutant_styles: The mutant style - taur bodytype, STYLE_TESHARI, etc. // NOVA EDI
 	if(quadruped)
 		appearance.add_filters(list(
 			list(
-				"name" = "Cut_Torso",
+				"name" = "Taur_Cut_Torso",
 				"priority" = 1,
-				"params" = displacement_map_filter(cut_torso_mask, x = 0, y = 0, size = 5),
+				"params" = displacement_map_filter(cut_torso_mask, x = 0, y = 0, size = 6),
 			)
 		))
 
