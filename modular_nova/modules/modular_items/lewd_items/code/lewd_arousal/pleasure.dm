@@ -9,7 +9,7 @@
 
 	// Bluemoon edit - Oversensitive quirk
 	if(HAS_TRAIT(src, TRAIT_OVERSENSITIVE))
-		pleas += 3
+		pleas += 0.4
 
 	pleasure = clamp(pleasure + pleas, AROUSAL_MINIMUM, AROUSAL_LIMIT)
 
