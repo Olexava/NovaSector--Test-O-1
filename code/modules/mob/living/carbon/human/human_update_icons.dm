@@ -1112,6 +1112,9 @@ mutant_styles: The mutant style - taur bodytype, STYLE_TESHARI, etc. // NOVA EDI
 	switch(upper_torso)
 		if(UPPER_BODY)
 			final_offset = GLOB.human_heights_to_offsets[height_to_use][1]
+			// Bluemoon edit - Quadrupedal crew
+			if(quadruped)
+				final_offset += HUMAN_HEIGHT_QUADRUPEDAL
 		if(LOWER_BODY)
 			final_offset = GLOB.human_heights_to_offsets[height_to_use][2]
 		else

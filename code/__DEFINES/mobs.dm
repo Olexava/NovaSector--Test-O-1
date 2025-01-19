@@ -689,6 +689,9 @@
 #define HUMAN_HEIGHT_TALL 14
 #define HUMAN_HEIGHT_TALLER 16
 #define HUMAN_HEIGHT_TALLEST 18
+// Bluemoon edit - Quadrupedal crew
+// The torso height offset for quadrupedals
+#define HUMAN_HEIGHT_QUADRUPEDAL -6
 
 /// Assoc list of all heights, cast to strings, to """"tuples"""""
 /// The first """tuple""" index is the upper body offset

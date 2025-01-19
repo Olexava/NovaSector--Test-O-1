@@ -5,9 +5,13 @@
 
 	/// Assoc list of stringified HUMAN_HEIGHT_### defines to string. Passed into CHOICED_PREFERENCE_DISPLAY_NAMES.
 	var/static/list/height_scaling_strings = list(
+		// Bluemoon edit - Add more body height options
+		"[HUMAN_HEIGHT_DWARF]" = "Dwarf",
+		"[HUMAN_HEIGHT_SHORTEST]" = "Shortest",
 		"[HUMAN_HEIGHT_SHORT]" = "Short",
 		"[HUMAN_HEIGHT_MEDIUM]" = "Medium",
 		"[HUMAN_HEIGHT_TALL]" = "Tall",
+		"[HUMAN_HEIGHT_TALLER]" = "Taller",
 	)
 
 	/// List of strings, representing quirk ids that prevent this from applying and being accessed.
@@ -19,7 +23,11 @@
 /datum/preference/choiced/height_scaling/init_possible_values()
 	// HUMAN_HEIGHT_SHORTEST and HUMAN_HEIGHT_TALLER are left out on maintainer request unless desired later
 	// HUMAN_HEIGHT_TALLEST is disabled because it constantly artifacts
+	// Bluemoon edit - Add more body height options
+	/*
 	return list(HUMAN_HEIGHT_SHORT, HUMAN_HEIGHT_MEDIUM, HUMAN_HEIGHT_TALL)
+	*/
+	return list(HUMAN_HEIGHT_DWARF, HUMAN_HEIGHT_SHORTEST, HUMAN_HEIGHT_SHORT, HUMAN_HEIGHT_MEDIUM, HUMAN_HEIGHT_TALL, HUMAN_HEIGHT_TALLER)
 
 /datum/preference/choiced/height_scaling/create_default_value()
 	return HUMAN_HEIGHT_MEDIUM
@@ -42,6 +50,10 @@
 /datum/preference/choiced/height_scaling/apply_to_human(mob/living/carbon/human/target, value, datum/preferences/preferences)
 	if (HAS_TRAIT(target, TRAIT_DWARF)) // nuh uh. your height is set mf
 		return FALSE
+
+	// Bluemoon edit - Quadrupedal crew
+	if(target.quadruped)
+		value = clamp(value, HUMAN_HEIGHT_SHORT, HUMAN_HEIGHT_TALL)
 
 	for (var/quirk_id as anything in preferences?.all_quirks)
 		if (quirk_id in incompatable_quirk_ids)

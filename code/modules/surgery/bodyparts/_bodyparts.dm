@@ -979,10 +979,10 @@
 
 	// NOVA EDIT ADDITION
 	var/datum/species/owner_species = human_owner.dna.species
-
+	// Bluemoon edit - Quadrupedal crew
+	alpha = 255
 	if(owner_species && owner_species.specific_alpha != 255)
 		alpha = owner_species.specific_alpha
-
 	// Bluemoon edit - Quadrupedal crew
 	if(!dropping_limb && (body_zone == BODY_ZONE_L_ARM || body_zone == BODY_ZONE_R_ARM) && human_owner.quadruped)
 		alpha = 0
