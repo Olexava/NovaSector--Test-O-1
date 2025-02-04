@@ -1,4 +1,6 @@
-#define BP_MAX_ROOM_SIZE 300
+// Bluemoon edit - Increase max room size
+// Original: #define BP_MAX_ROOM_SIZE 300
+#define BP_MAX_ROOM_SIZE 1000
 
 GLOBAL_LIST_INIT(typecache_powerfailure_safe_areas, typecacheof(list(
 	/area/station/engineering/main,
