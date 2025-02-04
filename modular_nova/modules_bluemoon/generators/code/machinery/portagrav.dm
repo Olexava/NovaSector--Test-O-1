@@ -46,7 +46,7 @@
 
 /obj/machinery/power/portagrav/turn_on(mob/user)
 	. = ..()
-	if(on)
+	if(!on)
 		return
 	if(flick_timerid)
 		deltimer(flick_timerid)
