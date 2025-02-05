@@ -13,3 +13,5 @@
 	falloff_exponent = 7
 	extra_range = -12
 	falloff_distance = 1
+	ignore_walls = FALSE
+	in_order = TRUE
