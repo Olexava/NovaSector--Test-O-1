@@ -8829,6 +8829,7 @@
 #include "modular_nova\modules_bluemoon\generators\code\machinery\port_gen.dm"
 #include "modular_nova\modules_bluemoon\generators\code\machinery\port_turbine.dm"
 #include "modular_nova\modules_bluemoon\generators\code\machinery\portagrav.dm"
+#include "modular_nova\modules_bluemoon\generators\code\machinery\supermatter_variants.dm"
 #include "modular_nova\modules_bluemoon\generators\code\machinery\turbine.dm"
 #include "modular_nova\modules_bluemoon\generators\code\objects\items\machine_boards.dm"
 #include "modular_nova\modules_bluemoon\headpat_lover_quirk\headpat_lover.dm"
