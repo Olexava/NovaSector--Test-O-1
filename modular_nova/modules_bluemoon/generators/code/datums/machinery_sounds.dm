@@ -26,6 +26,7 @@
 	mid_sounds = list(GENERATOR_SOUNDPATH("generator_run.ogg") = 1)
 	mid_length = 5.1 SECONDS
 	end_sound = GENERATOR_SOUNDPATH("generator_stop.ogg")
+	in_order = TRUE
 
 /datum/looping_sound/port_turbine
 	mid_sounds = list(
