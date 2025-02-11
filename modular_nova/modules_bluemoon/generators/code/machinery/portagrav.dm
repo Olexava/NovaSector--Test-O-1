@@ -39,8 +39,9 @@
 /obj/machinery/power/portagrav/process()
 	if(wire_mode)
 		return
-	if(((cell.charge / cell.maxcharge) * 100) % 4 != 0 && prob(75))
-		playsound(loc, 'sound/effects/empulse.ogg', 75, TRUE)
+	var/percent_charged = (cell.charge / cell.maxcharge) * 100
+	if((percent_charged < 50) && (percent_charged % 4 != 0) && prob(50))
+		playsound(loc, 'sound/effects/empulse.ogg', 50, TRUE)
 
 /obj/machinery/power/portagrav/update_icon()
 	. = ..()
