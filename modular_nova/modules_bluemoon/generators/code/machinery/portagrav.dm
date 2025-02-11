@@ -8,7 +8,6 @@
 	var/mutable_appearance/portagrav_overlay
 	var/mutable_appearance/startup_overlay
 	var/mutable_appearance/shutdown_overlay
-	var/flick_timerid
 
 	COOLDOWN_DECLARE(portagrav_toggle)
 
@@ -40,7 +39,7 @@
 /obj/machinery/power/portagrav/process()
 	if(wire_mode)
 		return
-	if((((cell.charge / cell.maxcharge) * 100) % 4 == 0) && prob(75))
+	if(((cell.charge / cell.maxcharge) * 100) % 4 != 0 && prob(75))
 		playsound(loc, 'sound/effects/empulse.ogg', 75, TRUE)
 
 /obj/machinery/power/portagrav/update_icon()
@@ -54,7 +53,6 @@
 
 /obj/machinery/power/portagrav/proc/finish_startup()
 	add_overlay(portagrav_overlay)
-	flick_timerid = null
 
 /obj/machinery/power/portagrav/toggle_on(mob/user)
 	if(!COOLDOWN_FINISHED(src, portagrav_toggle))
@@ -66,9 +64,7 @@
 	. = ..()
 	if(!on)
 		return
-	if(flick_timerid)
-		deltimer(flick_timerid)
-	flick_timerid = addtimer(CALLBACK(src, PROC_REF(finish_startup)), 15, TIMER_CLIENT_TIME | TIMER_DELETE_ME | TIMER_STOPPABLE)
+	addtimer(CALLBACK(src, PROC_REF(finish_startup)), 15, TIMER_CLIENT_TIME | TIMER_DELETE_ME | TIMER_STOPPABLE)
 	flick_overlay_view(startup_overlay, 15)
 	soundloop.start()
 
@@ -76,8 +72,6 @@
 	. = ..()
 	if(on)
 		return
-	if(flick_timerid)
-		deltimer(flick_timerid)
 	cut_overlay(portagrav_overlay)
 	flick_overlay_view(shutdown_overlay, 9)
 	soundloop.stop()
