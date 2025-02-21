@@ -5928,7 +5928,7 @@
 /obj/machinery/atmospherics/components/trinary/mixer/airmix/flipped{
 	dir = 8;
 	piping_layer = 4;
-	pipe_color = s
+	pipe_color = "#00FFFF"
 	},
 /turf/open/space/basic,
 /area/station/engineering/atmos)
