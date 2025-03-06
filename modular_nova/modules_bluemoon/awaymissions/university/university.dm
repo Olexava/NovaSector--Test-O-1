@@ -6,7 +6,7 @@
 	icon_state = "away2"
 	static_lighting = TRUE
 	requires_power = TRUE
-	has_gravity = STANDARD_GRAVITY
+	default_gravity = STANDARD_GRAVITY
 	always_unpowered = FALSE
 	mood_bonus = 1
 	mood_message = "This is a good day!"

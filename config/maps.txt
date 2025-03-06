@@ -35,11 +35,6 @@ map metastation
 	votable
 endmap
 
-map northstar
-	minplayers 0
-	votable
-endmap
-
 map tramstation
 	minplayers 0
 	votable

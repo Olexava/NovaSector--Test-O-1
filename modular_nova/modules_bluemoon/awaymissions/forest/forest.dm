@@ -7,7 +7,7 @@
 	base_lighting_alpha = 255
 	base_lighting_color = "#FFFFCC"
 	requires_power = FALSE
-	has_gravity = STANDARD_GRAVITY
+	default_gravity = STANDARD_GRAVITY
 	ambient_buzz = 'modular_nova/modules_bluemoon/awaymissions/forest/sound/ambience_forest.ogg'
 	forced_ambience = TRUE
 	ambient_buzz_vol = 25
@@ -35,7 +35,7 @@
 	base_lighting_alpha = 0
 	base_lighting_color = COLOR_WHITE
 	requires_power = FALSE
-	has_gravity = STANDARD_GRAVITY
+	default_gravity = STANDARD_GRAVITY
 	sound_environment = SOUND_ENVIRONMENT_CAVE
 
 /area/awaymission/forest/caves/deep
@@ -43,7 +43,7 @@
 	icon_state = "away3"
 	static_lighting = TRUE
 	requires_power = FALSE
-	has_gravity = STANDARD_GRAVITY
+	default_gravity = STANDARD_GRAVITY
 	ambient_buzz = 'modular_nova/modules_bluemoon/awaymissions/forest/sound/ambience_cave.ogg'
 	ambient_buzz_vol = 45
 

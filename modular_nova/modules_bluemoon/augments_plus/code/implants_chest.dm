@@ -1,16 +1,16 @@
 /datum/augment_item/implant/chest/reviver
 	name = "Reviver Implant"
-	path = /obj/item/organ/internal/cyberimp/chest/reviver
+	path = /obj/item/organ/cyberimp/chest/reviver
 
 /datum/augment_item/implant/chest/nutriment_pump_plus
 	name = "Nutriment Pump PLUS Implant"
-	path = /obj/item/organ/internal/cyberimp/chest/nutriment/plus
+	path = /obj/item/organ/cyberimp/chest/nutriment/plus
 
 /datum/augment_item/implant/chest/thrusters
 	name = "Inertial Maneuvering Jets Implant"
-	path = /obj/item/organ/internal/cyberimp/chest/thrusters
+	path = /obj/item/organ/cyberimp/chest/thrusters
 
-/obj/item/organ/internal/cyberimp/chest/spine/upgraded
+/obj/item/organ/cyberimp/chest/spine/upgraded
 	name = "\improper Atlas gravitonic spinal implant"
 	desc = "This gravitronic spinal interface is able to improve the athletics of a user, allowing them greater physical ability. \
 		This one has been improved through the installation of a gravity anomaly core, allowing for personal gravity manipulation."
@@ -21,8 +21,8 @@
 
 /datum/augment_item/implant/chest/thrusters
 	name = "Gravitronic Spinal Implant"
-	path = /obj/item/organ/internal/cyberimp/chest/spine
+	path = /obj/item/organ/cyberimp/chest/spine
 
 /datum/augment_item/implant/chest/thrusters
 	name = "Upgraded Gravitronic Spinal Implant"
-	path = /obj/item/organ/internal/cyberimp/chest/spine/upgraded
+	path = /obj/item/organ/cyberimp/chest/spine/upgraded

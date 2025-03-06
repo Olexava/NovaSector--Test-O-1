@@ -12,7 +12,7 @@ import {
   Input,
   Section,
   Stack,
-} from 'tgui/components';
+} from 'tgui-core/components';
 
 import {
   moveChatPageLeft,

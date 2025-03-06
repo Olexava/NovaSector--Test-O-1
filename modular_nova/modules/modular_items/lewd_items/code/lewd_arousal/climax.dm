@@ -73,9 +73,9 @@
 	var/self_their = p_their()
 
 	if(climax_choice == CLIMAX_PENIS || climax_choice == CLIMAX_BOTH)
-		var/obj/item/organ/external/genital/penis/penis = get_organ_slot(ORGAN_SLOT_PENIS)
+		var/obj/item/organ/genital/penis/penis = get_organ_slot(ORGAN_SLOT_PENIS)
 		// Bluemoon edit - Climax in containers
-		var/obj/item/organ/external/genital/testicles/testicles = get_organ_slot(ORGAN_SLOT_TESTICLES)
+		var/obj/item/organ/genital/testicles/testicles = get_organ_slot(ORGAN_SLOT_TESTICLES)
 		if(!testicles) //If we have no god damn balls, we can't cum anywhere... GET BALLS!
 			visible_message(span_userlove("[src] orgasms, but nothing comes out of [self_their] penis!"), \
 				span_userlove("You orgasm, it feels great, but nothing comes out of your penis!"))
@@ -180,7 +180,7 @@
 					if(!target_human)
 						target_buttons += "sheath"
 					else if(target_human.has_penis(REQUIRE_GENITAL_EXPOSED))
-						var/obj/item/organ/external/genital/penis/other_penis = target_human.get_organ_slot(ORGAN_SLOT_PENIS)
+						var/obj/item/organ/genital/penis/other_penis = target_human.get_organ_slot(ORGAN_SLOT_PENIS)
 						if(other_penis.sheath != "None")
 							target_buttons += "sheath"
 					target_buttons += "On [target_them]"
@@ -201,7 +201,7 @@
 						to_chat(target, span_userlove("Your [climax_into_choice] fills with warm cum as [src] shoots [self_their] load into it."))
 						// Bluemoon edit - Climax in containers
 						if(target_human && climax_into_choice == "mouth")
-							var/obj/item/organ/internal/stomach/belly = target_human.get_organ_slot(ORGAN_SLOT_STOMACH)
+							var/obj/item/organ/stomach/belly = target_human.get_organ_slot(ORGAN_SLOT_STOMACH)
 							if(belly)
 								testicles.transfer_internal_fluid(belly.reagents, testicles.internal_fluid_count * 0.6)
 							else
@@ -209,7 +209,7 @@
 
 			// Bluemoon edit - Climax in containers
 			/*
-			var/obj/item/organ/external/genital/testicles/testicles = get_organ_slot(ORGAN_SLOT_TESTICLES)
+			var/obj/item/organ/genital/testicles/testicles = get_organ_slot(ORGAN_SLOT_TESTICLES)
 			testicles.transfer_internal_fluid(null, testicles.internal_fluid_count * 0.6) // yep. we are sending semen to nullspace
 			*/
 			if(create_cum_decal)
@@ -235,7 +235,7 @@
 			return TRUE
 
 	if(climax_choice == CLIMAX_VAGINA || climax_choice == CLIMAX_BOTH)
-		var/obj/item/organ/external/genital/vagina/vagina = get_organ_slot(ORGAN_SLOT_VAGINA)
+		var/obj/item/organ/genital/vagina/vagina = get_organ_slot(ORGAN_SLOT_VAGINA)
 		if(is_bottomless() || vagina.visibility_preference == GENITAL_ALWAYS_SHOW)
 			visible_message(span_userlove("[src] twitches and moans as [p_they()] climax from their vagina!"), span_userlove("You twitch and moan as you climax from your vagina!"))
 			// Bluemoon edit - Add reagents to cum decals

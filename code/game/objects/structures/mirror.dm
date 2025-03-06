@@ -49,9 +49,13 @@
 	. = ..()
 	var/static/list/reflection_filter = alpha_mask_filter(icon = icon('icons/obj/watercloset.dmi', "mirror_mask"))
 	var/static/matrix/reflection_matrix = matrix(0.75, 0, 0, 0, 0.75, 0)
-	var/datum/callback/can_reflect = CALLBACK(src, PROC_REF(can_reflect))
-	var/list/update_signals = list(COMSIG_ATOM_BREAK)
-	AddComponent(/datum/component/reflection, reflection_filter = reflection_filter, reflection_matrix = reflection_matrix, can_reflect = can_reflect, update_signals = update_signals)
+	AddComponent(/datum/component/reflection, \
+		reflection_filter = reflection_filter, \
+		reflection_matrix = reflection_matrix, \
+		can_reflect = CALLBACK(src, PROC_REF(can_reflect)), \
+		update_signals = list(COMSIG_ATOM_BREAK), \
+		check_reflect_signals = list(SIGNAL_ADDTRAIT(TRAIT_NO_MIRROR_REFLECTION), SIGNAL_REMOVETRAIT(TRAIT_NO_MIRROR_REFLECTION)), \
+	)
 
 /obj/structure/mirror/proc/can_reflect(atom/movable/target)
 	///I'm doing it this way too, because the signal is sent before the broken variable is set to TRUE.
@@ -248,13 +252,13 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/structure/mirror/broken, 28)
 		to_chat(user, span_warning("A chill runs down your spine as [src] shatters..."))
 		user.AddComponent(/datum/component/omen, incidents_left = 7)
 
-/obj/structure/mirror/bullet_act(obj/projectile/P)
-	if(broken || !isliving(P.firer) || !P.damage)
+/obj/structure/mirror/bullet_act(obj/projectile/proj)
+	if(broken || !isliving(proj.firer) || !proj.damage)
 		return ..()
 
 	. = ..()
 	if(broken) // breaking a mirror truly gets you bad luck!
-		var/mob/living/unlucky_dude = P.firer
+		var/mob/living/unlucky_dude = proj.firer
 		to_chat(unlucky_dude, span_warning("A chill runs down your spine as [src] shatters..."))
 		unlucky_dude.AddComponent(/datum/component/omen, incidents_left = 7)
 

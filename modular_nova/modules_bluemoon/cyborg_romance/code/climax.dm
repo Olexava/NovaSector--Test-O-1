@@ -129,7 +129,7 @@
 					if(target_human.has_anus(REQUIRE_GENITAL_EXPOSED))
 						target_buttons += "asshole"
 					if(target_human.has_penis(REQUIRE_GENITAL_EXPOSED))
-						var/obj/item/organ/external/genital/penis/other_penis = target_human.get_organ_slot(ORGAN_SLOT_PENIS)
+						var/obj/item/organ/genital/penis/other_penis = target_human.get_organ_slot(ORGAN_SLOT_PENIS)
 						if(other_penis.sheath != "None")
 							target_buttons += "sheath"
 
@@ -152,7 +152,7 @@
 					to_chat(target, span_userlove("Your [climax_into_choice] fills with warm cum as [src] shoots [self_their] load into it."))
 					// Bluemoon edit - Climax in containers
 					if(target_human && climax_into_choice == "mouth")
-						var/obj/item/organ/internal/stomach/belly = target_human.get_organ_slot(ORGAN_SLOT_STOMACH)
+						var/obj/item/organ/stomach/belly = target_human.get_organ_slot(ORGAN_SLOT_STOMACH)
 						if(belly)
 							transfer_climax_fluid(/datum/reagent/consumable/cum, belly.reagents, 15)
 

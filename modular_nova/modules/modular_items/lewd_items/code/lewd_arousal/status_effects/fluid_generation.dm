@@ -23,7 +23,7 @@
 	if(owner.stat >= DEAD || !owner.client?.prefs?.read_preference(/datum/preference/toggle/erp/sex_toy) || !istype(affected_human))
 		return FALSE
 
-	var/obj/item/organ/external/genital/vagina/vagina = owner.get_organ_slot(ORGAN_SLOT_VAGINA)
+	var/obj/item/organ/genital/vagina/vagina = owner.get_organ_slot(ORGAN_SLOT_VAGINA)
 	if(!vagina)
 		return FALSE
 
@@ -49,7 +49,7 @@
 	if(owner.stat >= DEAD || !owner.client?.prefs?.read_preference(/datum/preference/toggle/erp/sex_toy) || !istype(affected_human))
 		return FALSE
 
-	var/obj/item/organ/external/genital/testicles/testes = owner.get_organ_slot(ORGAN_SLOT_TESTICLES)
+	var/obj/item/organ/genital/testicles/testes = owner.get_organ_slot(ORGAN_SLOT_TESTICLES)
 	// Bluemoon edit - Always-active body fluid regen
 	if(!testes /*|| (affected_human.arousal < AROUSAL_LOW)*/)
 		return FALSE
@@ -69,7 +69,7 @@
 	if(owner.stat >= DEAD || !owner.client?.prefs?.read_preference(/datum/preference/toggle/erp/sex_toy) || !istype(affected_human))
 		return FALSE
 
-	var/obj/item/organ/external/genital/breasts/breasts = owner.get_organ_slot(ORGAN_SLOT_BREASTS)
+	var/obj/item/organ/genital/breasts/breasts = owner.get_organ_slot(ORGAN_SLOT_BREASTS)
 	if(!breasts || !breasts.lactates)
 		return FALSE
 	// Bluemoon edit - Allow breast fluid regen without nutrition
